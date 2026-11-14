@@ -1,32 +1,96 @@
-# Workspace privado e segredos
+# R36S-ish Template - ignore policy v0.2
+# Track source, research, catalogs, tests and original redistributable assets.
+# Ignore secrets, local assistant memory, caches and reproducible artifacts.
+
+# Local/private workspaces (recursive; never commit)
 .dev/
+**/.dev/
+.agents/
+**/.agents/
+.codex/
+**/.codex/
+.claude/
+**/.claude/
+AGENTS.md
+**/AGENTS.md
+
+# Credentials, keys, private configuration
 .env
 .env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+*.p12
+*.pfx
+*.token
+**/token.txt
+**/token.json
+**/credentials.json
+**/secrets.json
+**/id_rsa
+**/id_ed25519
 
-# Contexto privado de agentes
-.agents/
-.codex/
-AGENTS.md
+# Python caches, test output, local tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.venv/
+venv/
 
-# Dependencias e artefatos de build
+# Local editors, IDE and operating system metadata
+.vscode/
+.idea/
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.swp
+*.swo
+*~
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+
+# Generated build outputs (including the original project's paths)
+/dist/
+/build/
+/builds/
+/out/
+/releases/
+/artifacts/
+/projects/
 node_modules/
-dist/
-builds/
+**/node_modules/
 apps/central/build/host-lua/
 apps/central/build/deploy/
-*.tar.gz
-theme.tar.gz
 *.love
+*.love.json
+*.tar.gz
+*.tgz
+theme.tar.gz
+
+# Local logs / benchmark traces / profiler output
 *.log
-__pycache__/
-*.pyc
+*.log.*
+*.trace
+*.prof
+perf.csv
+*.roundtrip.*
+*.tmp
+*.temp
+*.bak
+*.orig
+*.rej
 
-# Sistema e editor
-.DS_Store
-Thumbs.db
-
-# Workspace privado de cada projeto (nunca versionado)
-**/.dev/
-
-# Artefatos de teste na raiz (self-test do player rodando fora da pasta do app)
-/build/
+# LÖVE save data belongs to the platform, not to this repository.
+# Never ignore *.lua, *.md, *.json, *.png, *.wav, or *.ttf globally:
+# legitimate source code, documents and appropriately licensed assets must be tracked.
