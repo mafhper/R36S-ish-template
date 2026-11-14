@@ -1,0 +1,32 @@
+# Workspace privado e segredos
+.dev/
+.env
+.env.*
+
+# Contexto privado de agentes
+.agents/
+.codex/
+AGENTS.md
+
+# Dependencias e artefatos de build
+node_modules/
+dist/
+builds/
+apps/central/build/host-lua/
+apps/central/build/deploy/
+*.tar.gz
+theme.tar.gz
+*.love
+*.log
+__pycache__/
+*.pyc
+
+# Sistema e editor
+.DS_Store
+Thumbs.db
+
+# Workspace privado de cada projeto (nunca versionado)
+**/.dev/
+
+# Artefatos de teste na raiz (self-test do player rodando fora da pasta do app)
+/build/
